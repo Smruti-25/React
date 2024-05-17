@@ -26,6 +26,7 @@ const Header = () => {
 const RestaurantCard = () => {
   return (
     <div className="res-card" style={{backgroundColor: "#f0f0f0"}}>
+      <img  className = "res-logo" alt = "res-logo" src="https://www.licious.in/blog/wp-content/uploads/2022/06/chicken-hyderabadi-biryani-01.jpg"/>
       <h3>Meghana Foods </h3>
     </div>
   )

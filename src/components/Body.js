@@ -11,10 +11,8 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            console.log(restaurants);
-            const list = restaurants.filter((res) => res.info.avgRating > 4.3);
-            console.log(list);
-            setRestaurants(list);
+            const filteredList = restaurants.filter((res) => res.info.avgRating > 4.3);
+            setRestaurants(filteredList);
           }}
         >
           {" "}

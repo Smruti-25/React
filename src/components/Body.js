@@ -2,7 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 
 const Body = () => {
-  const [restaurants, setRestaurants] = useState(resObj);
+  const [restaurants, setRestaurants] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
@@ -13,7 +13,7 @@ const Body = () => {
     );
     const json = await data.json();
     setRestaurants(
-      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
   return (

@@ -1,8 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
+  const [searchText, setSearchText] = useState();
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -16,33 +19,41 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="filter">
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = restaurants.filter((res) => res.info.avgRating > 4.3);
-            setRestaurants(filteredList);
-          }}
-        >
-          {" "}
-          Top Rated Restaurants{" "}
-        </button>
+
+    return restaurants.length === 0 ? (
+      <Shimmer />
+    ) : (
+      <div className="body">
+        <div className="filter">
+          <div className="search">
+            <input type="text" className="search-box" />
+            <button>Search</button>
+          </div>
+          <button
+            className="filter-btn"
+            onClick={() => {
+              const filteredList = restaurants.filter(
+                (res) => res.info.avgRating > 4.3
+              );
+              setRestaurants(filteredList);
+            }}
+          >
+            {" "}
+            Top Rated Restaurants{" "}
+          </button>
+        </div>
+        <div className="res-container">
+          {restaurants.map((restaurant) => {
+            return (
+              <RestaurantCard
+                key={restaurant.info.id}
+                resData={restaurant.info}
+              />
+            );
+          })}
+        </div>
       </div>
-      <div className="res-container">
-        {restaurants.map((restaurant) => {
-          return (
-            <RestaurantCard
-              key={restaurant.info.id}
-              resData={restaurant.info}
-            />
-          );
-        })}
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Body;

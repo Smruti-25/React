@@ -29,7 +29,15 @@ const Body = () => {
             <input type="text" className="search-box" value={searchText} onChange={(e) => {
               setSearchText(e.target.value)
             }}/>
-            <button onClick={() => console.log(searchText)}>Search</button>
+            <button onClick={() => {
+              {
+                console.log(searchText);
+                const filteredRestaurants = restaurants.filter((res) => res.info.name.includes(searchText)
+                );
+                console.log(filteredRestaurants);
+                setRestaurants(filteredRestaurants);
+              }
+            }}>Search</button>
           </div>
           <button
             className="filter-btn"

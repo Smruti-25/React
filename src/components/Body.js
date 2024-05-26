@@ -32,7 +32,7 @@ const Body = () => {
             <button onClick={() => {
               {
                 console.log(searchText);
-                const filteredRestaurants = restaurants.filter((res) => res.info.name.includes(searchText)
+                const filteredRestaurants = restaurants.filter((res) => res.info.name.toLowerCase().includes(searchText)
                 );
                 console.log(filteredRestaurants);
                 setRestaurants(filteredRestaurants);

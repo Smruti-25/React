@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 const Body = () => {
   const [restaurants, setRestaurants] = useState(resObj);
   useEffect(() => {
-    console.log("useEffect Called");
     fetchData();
   }, []);
 

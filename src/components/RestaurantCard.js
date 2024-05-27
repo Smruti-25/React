@@ -11,9 +11,9 @@ const RestaurantCard = (props) => {
         src={RES_LOGO_URL + cloudinaryImageId}
       />
       <h3 style={{ margin: "8px 0 8px 4px" }}>{name}</h3>
-      <h4 style={{ margin: "2px 0" }}>{cuisines.join()}</h4>
-      <h4 style={{ margin: "2px 0" }}>{avgRating}</h4>
-      <h4 style={{ margin: "2px 0" }}>{sla.deliveryTime}</h4>
+      <h4 style={{ margin: "2px 0" }}>{cuisines.join(", ")}</h4>
+      <h4 style={{ margin: "2px 0" }}>{avgRating +" "+ "Stars"}</h4>
+      <h4 style={{ margin: "2px 0" }}>{sla?.deliveryTime + " "+"Mins"}</h4>
     </div>
   );
 };

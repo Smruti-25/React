@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import { createBrowserRouter } from "react-router-dom";
+import About from "./components/About";
+import ContactUs from "./components/ContactUs";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //todo add cart logo
 const AppLayout = () => {
@@ -13,16 +15,23 @@ const AppLayout = () => {
     </div>
   );
 }
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />
+    element: <AppLayout />,
   },
 
   {
     path: "/about",
-    element: <About />
-  }
+    element: <About />,
+  },
+
+  {
+    path: "/contactus",
+    element: <ContactUs />,
+  },
 ]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);

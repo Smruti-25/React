@@ -27,13 +27,11 @@ const appRouter = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
-    errorElement: <Error />,
   },
 
   {
     path: "/contactus",
     element: <ContactUs />,
-    errorElement: <Error />,
   },
 ]);
 

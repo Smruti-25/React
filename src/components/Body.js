@@ -72,8 +72,8 @@ const Body = () => {
           {filteredRestaurants.map((restaurant) => {
             return (
               <RestaurantCard
-                key={restaurant.info.id}
-                resData={restaurant.info}
+                key={restaurant?.info?.id}
+                resData={restaurant?.info}
               />
             );
           })}

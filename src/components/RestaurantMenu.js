@@ -2,10 +2,10 @@ import { useEffect } from "react";
 
 const RestaurantMenu = () => {
   useEffect(() => {
-    fetchData();
+    fetchMenu();
   }, []);
 
-  const fetchData = async() => {
+  const fetchMenu = async () => {
     const jsonData = await fetch("");
     const json = await jsonData.json();
 

@@ -5,14 +5,14 @@ import Body from "./components/Body";
 import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 //todo add cart logo
 const AppLayout = () => {
   return (
     <div className="app">
-      <Header/>
-      <Body/>
+      <Header />
+      <Outlet />
     </div>
   );
 }
@@ -21,17 +21,22 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+
+      {
+        path: "/contactus",
+        element: <ContactUs />,
+      },
+    ],
     errorElement: <Error />,
-  },
-
-  {
-    path: "/about",
-    element: <About />,
-  },
-
-  {
-    path: "/contactus",
-    element: <ContactUs />,
   },
 ]);
 

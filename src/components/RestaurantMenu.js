@@ -22,12 +22,11 @@ const RestaurantMenu = () => {
 
   if(restaurantInfo === null) return <Shimmer/>
 
-  const { name, costForTwoMessage, avgRating, cuisines } =
-    restaurantInfo?.cards[2]?.card?.card?.info;
+  const { name, costForTwoMessage, avgRating, cuisines } = restaurantInfo?.cards[2]?.card?.card?.info;
   
-  const { itemCards } =
-    restaurantInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card?.itemCards;
+  const { itemCards } = restaurantInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+  
+  console.log(itemCards);
 
   return (
     <div className="menu">
@@ -40,7 +39,6 @@ const RestaurantMenu = () => {
 
         <h2>Menu</h2>
         <ul>
-          <li>{itemCards}</li>
         </ul>
       </div>
     </div>

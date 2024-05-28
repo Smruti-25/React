@@ -32,13 +32,16 @@ const RestaurantMenu = () => {
     <div className="menu">
       <div>
         <h1>{name}</h1>
-        <h2>
+        <h3>
           {cuisines.join(", ")} - {costForTwoMessage}
-        </h2>
-        <h2>{avgRating}</h2>
+        </h3>
+        <h3>{avgRating}</h3>
 
         <h2>Menu</h2>
         <ul>
+          {itemCards.map((icard) => (
+            <li>{icard.card.info.name}</li>
+          ))}
         </ul>
       </div>
     </div>

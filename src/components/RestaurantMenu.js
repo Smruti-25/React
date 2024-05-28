@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
   useEffect(() => {
@@ -23,7 +24,7 @@ const RestaurantMenu = () => {
     setRestaurantMenu(restaurantMenu);
   };
 
-  return (
+  return restaurantData.length === 0? ( <Shimmer/> ) : (
     <div className="menu">
       <h1>
         I am the restaurant menu Page

@@ -11,23 +11,21 @@ const RestaurantMenu = () => {
     fetchMenu();
   }, []);
 
-  const fetchMenu = async() => {
-    const jsonData = await fetch(MENU_API_URL + resId);
+  const fetchMenu = async () => {
+    const jsonData = await fetch(MENU_API_URL+resId);
     const json = await jsonData.json();
-
     console.log(json);
-    // const restaurantData = json?.data?.cards[2]?.card?.card?.info;
-    // const restaurantMenu = json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards;
     setRestaurantInfo(json.data);
   };
 
-  if(restaurantInfo === null) return <Shimmer/>
+  if (restaurantInfo === null) return <Shimmer />;
 
   const { name, costForTwoMessage, avgRating, cuisines } = restaurantInfo?.cards[2]?.card?.card?.info;
-  
-  const { itemCards } = restaurantInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-  
-  console.log(itemCards);
+
+  const { itemCards } =
+    restaurantInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+
+  if (itemCards === null) return <Shimmer />;
 
   return (
     <div className="menu">
@@ -41,7 +39,7 @@ const RestaurantMenu = () => {
         <h2>Menu</h2>
         <ul>
           {itemCards.map((icard) => (
-            <li key = {icard.card.info.id}>
+            <li key={icard.card.info.id}>
               {icard.card.info.name} - Rs {icard.card.info.price / 100}
             </li>
           ))}

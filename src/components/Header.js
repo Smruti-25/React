@@ -12,16 +12,22 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li>Home</li>
-          <li>About Us</li>
-          <Link to={"/contactus"}>Contact Us</Link>
+          <li>
+            <Link to={"/about"}>About Us</Link>
+          </li>
+          <li>
+            <Link to={"/contactus"}>Contact Us</Link>
+          </li>
           <li>Cart</li>
           <button
             className="login"
             onClick={() => {
-              btnNameReact === "login" ? setBtnNameReact("logout") : setBtnNameReact("login")
+              btnNameReact === "login"
+                ? setBtnNameReact("logout")
+                : setBtnNameReact("login");
             }}
           >
-          {btnNameReact}
+            {btnNameReact}
           </button>
         </ul>
       </div>

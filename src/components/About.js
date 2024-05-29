@@ -1,7 +1,12 @@
+import User from "./User";
+
 const AboutUs = () => {
   return (
-    <h1>I am the About Component</h1>
-  )
+    <div>
+      <h1>I am the About Component</h1>
+      <User />
+    </div>
+  );
 }
 
 export default AboutUs;

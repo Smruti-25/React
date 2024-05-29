@@ -6,7 +6,7 @@ const AboutUs = () => {
     <div>
       <h1>I am the About Component</h1>
       <User name = {"Smruti Karade functional"}/>
-      <UserClass />
+      <UserClass name = {"Smruti Karade Class"} location = {Nagpur}/>
     </div>
   );
 }

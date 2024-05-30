@@ -7,7 +7,7 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
   let [btnNameReact, setBtnNameReact] = useState("login");
   return (
-    <div className="header">
+    <div className="flex">
       <div className="logo-container">
         <img className="logo" src={LOGO_URL} />
       </div>

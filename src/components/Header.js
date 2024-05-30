@@ -7,12 +7,12 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
   let [btnNameReact, setBtnNameReact] = useState("login");
   return (
-    <div className="flex">
+    <div className="flex justify-between bg-blue-50 shadow-md m-1">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-28" src={LOGO_URL} />
       </div>
       <div className="nav-items">
-        <ul>
+        <ul className="flex p-4 m-4">
           <li>OnlineStatus = {onlineStatus ? "✅" : "🔴"}</li>
           <li>
             <Link to={"/"}>Home</Link>

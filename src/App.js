@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,7 +7,8 @@ import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Grocery from "./components/Grocery";
+
+const Grocery = lazy(()=>import("./components/Grocery"));
 
 //todo add cart logo
 const AppLayout = () => {
@@ -44,7 +45,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/grocery",
-        element: <Grocery />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <Error />,

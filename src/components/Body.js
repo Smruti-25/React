@@ -87,7 +87,7 @@ const Body = () => {
                 to={"/restaurants/" + restaurant.info.id}
                 key={restaurant?.info?.id}
               >
-                {restaurant.info.promoted ? (
+                {restaurant.info?.aggregatedDiscountInfoV3?.header ? (
                   <RestaurantCardPromoted resData={restaurant?.info} />
                 ) : (
                   <RestaurantCard resData={restaurant?.info} />

@@ -28,7 +28,7 @@ export const withPromotedLabel = (RestaurantCard) => {
   return (props) => {
     return (
       <div>
-        <label>Promoted</label>
+        <label>Discount</label>
         <RestaurantCard {...props}/>
       </div>
     )

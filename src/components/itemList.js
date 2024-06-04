@@ -1,9 +1,8 @@
-const itemList = () => {
+const ItemList = ({items}) => {
+  console.log({items});
   return (
-    <div>
-
-    </div>
-  )
+    <p>Category Items</p>
+  );
 }
 
-export default itemList;
+export default ItemList;

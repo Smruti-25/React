@@ -1,7 +1,14 @@
 const ItemList = ({items}) => {
   console.log({items});
   return (
-    <p>Category Items</p>
+    <div>
+      {items.map((i) => (
+        <div key={i?.card?.info?.id}>
+          <span>{i?.card?.info?.name}</span>
+          <span>{i?.card?.info?.price}</span>
+        </div>
+      ))}
+    </div>
   );
 }
 

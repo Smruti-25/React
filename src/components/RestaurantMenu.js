@@ -22,7 +22,7 @@ const RestaurantMenu = () => {
           "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
       );
     
-    console.log(categories);
+    console.log({categories});
 
   return (
     <div className="text-center">
@@ -32,7 +32,7 @@ const RestaurantMenu = () => {
           {cuisines.join(", ")} - {costForTwoMessage}
         </p>
         {categories.map((category) => (
-          <RestaurantCategory data = {category.card.card}/>
+          <RestaurantCategory key = {category.card.type} data = {category.card.card}/>
         ))}
       </div>
     </div>

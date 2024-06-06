@@ -1,7 +1,6 @@
 import { RES_LOGO_URL } from "../utils/constants";
 
 const MenuItemList = ({items}) => {
-  console.log({ items });
   return (
     <div>
       {items.map((item) => (

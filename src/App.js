@@ -25,7 +25,9 @@ const AppLayout = () => {
   return (
     <UserContext.Provider value={{ loggedInUser: userName }}>
       <div className="app">
-        <Header />
+        <UserContext.Provider value={{ loggedInUser: "Overridden user name" }}>
+          <Header />
+        </UserContext.Provider>
         <Outlet />
       </div>
     </UserContext.Provider>

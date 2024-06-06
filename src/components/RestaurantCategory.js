@@ -1,4 +1,4 @@
-import ItemList from "./itemList";
+import MenuItemList from "./MenuItemList";
 
 const RestaurantCategory = ({data}) => {
   console.log({data});
@@ -10,7 +10,7 @@ const RestaurantCategory = ({data}) => {
         </span>
         <span>⬇️</span>
       </div>
-      <ItemList items = {data.itemCards}/>
+      <MenuItemList items={data.itemCards} />
     </div>
   );
 }

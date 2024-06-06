@@ -16,4 +16,6 @@ const cartSlice = createSlice({
       state.items.length = 0;
     }
   }
-})
+});
+
+export default cartSlice.reducer;

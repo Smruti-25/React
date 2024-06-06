@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,6 +9,18 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const Grocery = lazy(()=>import("./components/Grocery"));
 const AboutUs = lazy(() => import("./components/About"));
+
+const [userName, setUserName] = useState();
+
+useEffect(() => {
+  {
+    //some authentication logic
+    const data = {
+      name: "Smruti",
+    };
+  }
+  setUserName(data.name);
+}, []);
 
 //todo add cart logo
 const AppLayout = () => {

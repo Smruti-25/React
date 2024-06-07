@@ -5,9 +5,9 @@ import { RES_LOGO_URL } from "../utils/constants";
 const MenuItemList = ({items}) => {
   const dispatch = useDispatch();
 
-  const handleAddItem = () => {
+  const handleAddItem = (item) => {
     //dispatch an action
-    dispatch(addItem("cart"))
+    dispatch(addItem(item))
   }
 
   return (
@@ -33,7 +33,7 @@ const MenuItemList = ({items}) => {
           <div className="w-3/12">
             <div className="absolute">
               <button className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg"
-                onClick={handleAddItem}
+                onClick={()=>handleAddItem(item)}
               >
                 Add +
               </button>

@@ -18,6 +18,7 @@ const Cart = () => {
         Clear Cart
       </button>
       <div className="w-6/12 m-auto">
+        {cartItems.length === 0 && <h1>Cart is Empty1!</h1>}
         <MenuItemList items={cartItems} />
       </div>
     </div>

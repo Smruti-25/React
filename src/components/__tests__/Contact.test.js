@@ -28,7 +28,7 @@ describe("test cases for the contact us component", () => {
     expect(input).toBeInTheDocument();
   });
 
-  test("should load two input boxes on the contactUs Component", () => {
+  it("should load two input boxes on the contactUs Component", () => {
     render(<ContactUs />);
     const inputs = screen.getAllByRole("textbox");
     console.log(inputs);

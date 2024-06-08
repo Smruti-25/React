@@ -17,4 +17,17 @@ describe("should test the header component", () => {
     const loginButton = screen.getByRole("button",{name:"login"});
     expect(loginButton).toBeInTheDocument();
   });
+
+  test("should load header component with cart", () => {
+    render(
+      <BrowserRouter>
+        <Provider store={appStore}>
+          <Header />
+        </Provider>
+      </BrowserRouter>
+    );
+    const cart = screen.getByText(/Cart/);
+    expect(cart).toBeInTheDocument();
+  });
 });
+

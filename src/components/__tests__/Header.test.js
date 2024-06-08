@@ -14,7 +14,7 @@ describe("should test the header component", () => {
         </Provider>
       </BrowserRouter>
     );
-    const loginButton = screen.getByText("login");
+    const loginButton = screen.getByRole("button");
     expect(loginButton).toBeInTheDocument();
   });
 });

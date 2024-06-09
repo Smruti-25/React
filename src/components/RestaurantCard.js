@@ -2,6 +2,7 @@ import { RES_LOGO_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
+  console.log({resData});
   const { name, cuisines, avgRating, sla, cloudinaryImageId } = resData;
   let noOfStars = "";
   for (let i = 1; i<=avgRating; i++){

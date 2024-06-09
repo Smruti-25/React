@@ -34,3 +34,24 @@ test("should render the body component and search resList for burger text input"
   expect(cards.length).toBe(2);
 });
 
+test("should filter top rated restaurants", async() => {
+  await act(() =>
+    render(
+      <BrowserRouter>
+        <Body />
+      </BrowserRouter>
+    )
+  );
+
+  const cardsBeforeFilter = screen.getAllByTestId("resCard");
+  expect(cardsBeforeFilter.length).toBe(20);
+
+  const topRatedBtn = screen.getByRole("button", {
+    name: "Top Rated Restaurants",
+  });
+  fireEvent.click(topRatedBtn);
+
+  const cardsAfterFilter = screen.getAllByTestId("resCard");
+  expect(cardsAfterFilter.length).toBe(11);
+});
+

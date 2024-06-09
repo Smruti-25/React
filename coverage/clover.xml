@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1717913119080" clover="3.2.0">
-  <project timestamp="1717913119080" name="All files">
-    <metrics statements="35" coveredstatements="31" conditionals="6" coveredconditionals="5" methods="12" coveredmethods="10" elements="53" coveredelements="46" complexity="0" loc="35" ncloc="35" packages="1" files="2" classes="2"/>
+<coverage generated="1717913542608" clover="3.2.0">
+  <project timestamp="1717913542608" name="All files">
+    <metrics statements="25" coveredstatements="21" conditionals="6" coveredconditionals="5" methods="9" coveredmethods="7" elements="40" coveredelements="33" complexity="0" loc="25" ncloc="25" packages="1" files="1" classes="1"/>
     <file name="Body.js" path="/Users/smrutikarade/Programming/2024/React/src/components/Body.js">
       <metrics statements="25" coveredstatements="21" conditionals="6" coveredconditionals="5" methods="9" coveredmethods="7"/>
       <line num="7" count="1" type="stmt"/>
@@ -29,19 +29,6 @@
       <line num="75" count="0" type="stmt"/>
       <line num="77" count="0" type="stmt"/>
       <line num="87" count="42" type="stmt"/>
-    </file>
-    <file name="RestaurantCard.js" path="/Users/smrutikarade/Programming/2024/React/src/components/RestaurantCard.js">
-      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <line num="3" count="2" type="stmt"/>
-      <line num="4" count="43" type="stmt"/>
-      <line num="5" count="43" type="stmt"/>
-      <line num="6" count="43" type="stmt"/>
-      <line num="7" count="43" type="stmt"/>
-      <line num="8" count="170" type="stmt"/>
-      <line num="10" count="43" type="stmt"/>
-      <line num="28" count="2" type="stmt"/>
-      <line num="29" count="4" type="stmt"/>
-      <line num="30" count="40" type="stmt"/>
     </file>
   </project>
 </coverage>

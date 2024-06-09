@@ -2,7 +2,6 @@ import { RES_LOGO_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  console.log({resData});
   const { name, cuisines, avgRating, sla, cloudinaryImageId } = resData;
   let noOfStars = "";
   for (let i = 1; i<=avgRating; i++){
@@ -11,6 +10,7 @@ const RestaurantCard = (props) => {
   return (
     <div
       className="m-4 p-4 w-[250px] bg-gray-100 rounded-lg hover:bg-gray-300"
+      data-testid = "resCard"
     >
       <img
         className="rounded-2xl"

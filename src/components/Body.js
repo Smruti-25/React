@@ -19,6 +19,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.11610&lng=79.07060&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log({ json });
 
     setRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -43,6 +44,7 @@ const Body = () => {
         <div className="filter flex">
           <div className="search m-4 p-4">
             <input
+              data-testid="searchInput"
               type="text"
               className="border border-solid border-black"
               value={searchText}
